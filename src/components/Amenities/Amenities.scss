@@ -1,0 +1,40 @@
+.amenities {
+  padding: 60px 20px;
+  text-align: center;
+  
+  h2 {
+    margin-bottom: 20px;
+    font-size: 32px;
+    color: #00695c;
+  }
+  
+  .amenitiesList {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .amenity {
+      flex: 1 1 calc(33.333% - 40px); /* Each item takes up about a third of the row */
+      max-width: calc(33.333% - 40px);
+      margin: 20px;
+      text-align: center;
+
+      i {
+        font-size: 36px;
+        color: #00695c;
+      }
+
+      p {
+        margin-top: 10px;
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+.fa-icon {
+  height: 70px;
+  width: 70px;
+  padding-top: 10px;
+  color: #00695c;
+}

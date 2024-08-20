@@ -1,0 +1,164 @@
+.hero {
+  background-size: cover;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  position: relative;
+
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 60vw;
+    z-index: -1;
+    object-fit: cover;
+    margin-top: -200px;
+  }
+
+  .heroText {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    h1 {
+      font-size: 3em;
+    }
+
+    p {
+      font-size: 1.5em;
+    }
+  }
+
+  @media (max-width: 767px) { /* Mobile */
+    height: 400px;
+
+    .background {
+      margin-top: 90px;
+    }
+
+    .heroText {
+      h1 {
+        font-size: 2.5em;
+      }
+
+      p {
+        font-size: 1.2em;
+      }
+    }
+  }
+
+  @media (max-width: 425px) { /* Mobile-Specific Styles */
+    height: 350px;
+
+    .background {
+      height: 80vw;
+    }
+
+    .heroText {
+      h1 {
+        font-size: 2em;
+      }
+
+      p {
+        font-size: 1em;
+      }
+    }
+  }
+
+  @media (max-width: 375px) { /* Small Mobile */
+    height: 300px;
+
+    .background {
+      height: 90vw;
+    }
+
+    .heroText {
+      h1 {
+        font-size: 1.8em;
+      }
+
+      p {
+        font-size: 0.9em;
+      }
+    }
+  }
+
+  @media (max-width: 320px) { /* Extra Small Mobile */
+    height: 250px;
+
+    .background {
+      height: 100vw;
+    }
+
+    .heroText {
+      h1 {
+        font-size: 1.5em;
+      }
+
+      p {
+        font-size: 0.8em;
+      }
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 991px) { /* Tablet */
+    height: 600px;
+
+    .background {
+      height: 60vw;
+    }
+
+    .heroText {
+      h1 {
+        font-size: 2.8em;
+      }
+
+      p {
+        font-size: 1.4em;
+      }
+    }
+  }
+
+  @media (min-width: 992px) and (max-width: 1199px) { /* Laptop */
+    height: 650px;
+
+    .background {
+      height: 60vw;
+    }
+
+    .heroText {
+      h1 {
+        font-size: 3em;
+      }
+
+      p {
+        font-size: 1.5em;
+      }
+    }
+  }
+
+  @media (min-width: 1200px) { /* Desktop */
+    height: 700px;
+
+    .background {
+      height: 60vw;
+    }
+
+    .heroText {
+      h1 {
+        font-size: 3.2em;
+      }
+
+      p {
+        font-size: 1.6em;
+      }
+    }
+  }
+}

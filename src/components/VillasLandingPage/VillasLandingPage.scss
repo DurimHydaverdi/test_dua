@@ -1,0 +1,154 @@
+.villas-landing-page {
+  display: flex;
+  padding: 20px;
+  margin-top: 350px;
+
+  .collage {
+    display: none;
+  }
+
+  .facilities-section {
+    flex: 1;
+    padding-right: 50px;
+    margin-left: 200px;
+
+    h2 {
+      font-size: 24px;
+      color: #045144;
+    }
+
+    .facilities-list {
+      list-style-type: none;
+      padding: 2rem;
+
+      li {
+        font-size: 18px;
+        color: #333;
+        margin-bottom: 15px;
+        cursor: pointer;
+
+        &.active {
+          color: #045144;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .view-more {
+    background-color: #00695c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+  }
+
+  .images-section {
+    flex: 2;
+    display: flex;
+    gap: 10px;
+
+    img {
+      width: 300px;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    img + img {
+      margin-left: 100px;
+    }
+  }
+
+  @media (max-width: 991px) { /* Tablet */
+    flex-direction: column;
+    margin-top: 200px;
+
+    .facilities-section {
+      margin-left: 0;
+      padding-right: 0;
+      text-align: center;
+    }
+
+    .images-section {
+      flex-direction: column;
+      align-items: center;
+
+      img {
+        width: 80%;
+        height: auto;
+      }
+
+      img + img {
+        margin-left: 0;
+        margin-top: 20px;
+      }
+    }
+  }
+
+  @media (max-width: 767px) { /* Mobile */
+    margin-top: 0px;
+    padding: 10px;
+
+    .facilities-section {
+      h2 {
+        font-size: 20px;
+      }
+
+      .facilities-list li {
+        font-size: 16px;
+      }
+
+      .view-more {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+      }
+    }
+
+    .images-section {
+      img {
+        width: 100%;
+        height: auto;
+        display: none;
+      }
+
+      .collage {
+        display: block;
+      }
+
+      img + img {
+        margin-top: 15px;
+      }
+    }
+  }
+
+  @media (max-width: 425px) { /* Mobile-Specific Styles */
+    margin-top: 100px;
+
+    .facilities-section {
+      h2 {
+        font-size: 18px;
+      }
+
+      .facilities-list li {
+        font-size: 14px;
+      }
+    }
+
+    .view-more {
+      font-size: 0.8rem;
+      padding: 6px 12px;
+    }
+
+    .images-section {
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}

@@ -1,0 +1,238 @@
+.villa-detail {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+
+  .villa-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 100px;
+    color: #00695c;
+
+    h1 {
+      font-size: 2rem;
+      margin: 0;
+    }
+
+    .rating {
+      display: flex;
+      align-items: center;
+
+      .rating-score {
+        font-size: 2rem;
+        color: #4caf50;
+        margin-right: 10px;
+      }
+
+      .rating-text {
+        font-size: 1rem;
+        color: #555;
+        margin-right: 5px;
+      }
+
+      .reviews {
+        font-size: 0.9rem;
+        color: #777;
+      }
+    }
+  }
+
+  .villa-gallery {
+    margin: 20px 0;
+
+    .image-gallery-slide img {
+      width: 100%;
+      max-width: 900px;
+      height: auto;
+    }
+  }
+
+  .villa-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 20px 0;
+
+    .villa-info {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+
+      .villa-description {
+        font-size: 1rem;
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      .villa-amenities {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-bottom: 20px;
+
+        .amenity {
+          display: flex;
+          align-items: center;
+          font-size: 1rem;
+          color: #555;
+          padding: 10px;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+
+          span {
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+
+    .booking-summary {
+      flex: 0 1 0px;
+      border: 1px solid rgb(221, 221, 221);
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: rgba(0, 0, 0, 0.06) 0px 3px 8px;
+      width: 300px;
+      height: 270px;
+
+      h2 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        color: #00695c;
+      }
+
+      h3 {
+        height: 50px;
+        margin-top: 50px;
+        margin-bottom: 70px;
+      }
+
+      .booking-details {
+        margin-bottom: 20px;
+
+        label {
+          display: block;
+          margin-bottom: 10px;
+
+          input {
+            margin-left: 10px;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+          }
+        }
+
+        .price-details {
+          font-size: 1rem;
+          color: #333;
+          margin-top: 10px;
+
+          p {
+            margin: 5px 0;
+          }
+        }
+      }
+
+      .book-now {
+        display: flex;
+        justify-content: center;
+
+        button {
+          background-color: #00695c;
+          color: #fff;
+          height: 40px;
+          width: 350px;
+          border: none;
+          border-radius: 5px;
+          padding: 10px 20px;
+          font-size: 1rem;
+          cursor: pointer;
+          transition: background-color 0.3s;
+
+          &:hover {
+            background-color: #004d40;
+          }
+        }
+      }
+    }
+  }
+
+  .desp-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .image-gallery-svg:hover,
+  .image-gallery-icon:hover {
+    color: #00695c;
+  }
+
+  .image-gallery-thumbnail-image {
+    cursor: pointer;
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .villa-detail {
+    padding: 10px;
+
+    .villa-header {
+      flex-direction: column;
+      align-items: flex-start;
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .rating {
+        margin-top: 10px;
+      }
+    }
+
+    .villa-content {
+      flex-direction: column;
+
+      .villa-info {
+        width: 100%;
+      }
+
+      .booking-summary {
+        width: 92%;
+        margin-top: 20px;
+
+        .book-now {
+          button {
+            width: 50%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .villa-detail {
+    .villa-header {
+      h1 {
+        font-size: 1.2rem;
+      }
+    }
+
+    .villa-amenities .amenity {
+      font-size: 0.8rem;
+    }
+
+    .booking-summary {
+      padding: 15px;
+      h2 {
+        font-size: 1.2rem;
+      }
+      .book-now button {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
