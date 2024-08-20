@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
 import './About.scss';
-import file_2 from '../Assets/file_2.png'
-import video from '../Assets/dua-village-video.mp4';
+import video from '../Assets/dua-village-video.mov';
 
 const About = (props) => {
   const videoRefs = useRef([]);
@@ -27,7 +26,7 @@ const About = (props) => {
         {/* Video element */}
         <div className="video-container">
           <video ref={ref => videoRefs.current[0] = ref} controls controlsList="nodownload" onPlay={() => handlePlay(0)} width="850px" height="500px">
-            <source src={video} type="video/mp4" />
+            <source src={video} />
             {/* <video ref={ref => videoRefs.current[0] = ref} controls controlsList="nodownload" onPlay={() => handlePlay(0)}></video> */}
             Your browser does not support the video tag.
           </video>
