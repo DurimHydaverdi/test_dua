@@ -7,14 +7,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px 10px 10px;
+  padding: 10px 20px;
 
   .logo {
     font-size: 24px;
     font-weight: bold;
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: white;
-    margin-right: 58vw;
+    margin-right: auto; /* Adjusts margin to use space effectively */
   }
 
   .logo_img {
@@ -26,31 +26,46 @@
 
   .nav {
     ul {
-      display: flex;
       list-style: none;
-      margin: 0;
       padding: 0;
+      margin: 0;
+      display: flex; /* Ensure the menu is flex container */
+      flex-direction: row; /* Align items in a row by default */
 
       li {
-        margin: 0 15px;
-        cursor: pointer;
+        margin: 0 15px; /* Space out items horizontally */
+        text-align: center;
 
         a {
-          text-decoration: none;
           color: white;
+          text-decoration: none;
+          font-size: 18px;
+          font-weight: bold;
+          display: block;
+          padding: 10px 0;
+          width: 100%; /* Make links take full width of their container */
+
           &:hover {
-            text-decoration: underline;
+            background-color: #004d40; /* Darker background on hover */
+            color: #fff;
+            text-decoration: none;
           }
         }
       }
 
       .bookButton {
+        width: auto; /* Adjust width as needed */
+        padding: 12px 20px; /* Increased padding for better touch */
+        font-size: 18px;
+        text-align: center;
         background: lightslategray;
-        color: #fff;
-        padding: 10px 20px;
+        color: white;
         border-radius: 5px;
+        margin-left: auto; /* Align button to the right in desktop view */
+        margin-right: 0; /* Ensure proper spacing */
+
         &:hover {
-          background: lightslategray;
+          background: darkslategray; /* Darker background on hover */
         }
       }
     }
@@ -70,7 +85,7 @@
     }
 
     &.open .bar:nth-child(1) {
-      transform: rotate(-45deg) translate(-10px, 10px);
+      transform: rotate(-45deg) translate(-5px, 6px);
     }
 
     &.open .bar:nth-child(2) {
@@ -78,14 +93,14 @@
     }
 
     &.open .bar:nth-child(3) {
-      transform: rotate(45deg) translate(-5px, -5px);
+      transform: rotate(45deg) translate(-10px, -10px);
     }
   }
 
   @media (max-width: 767px) { /* Mobile */
     .nav {
       position: absolute;
-      top: 21vw;
+      top: 90px; /* Adjust based on header height */
       right: 0;
       background-color: #00695c;
       width: 100%;
@@ -93,22 +108,31 @@
       overflow: hidden;
       transition: max-height 0.3s ease-in-out;
       z-index: 1000;
+      display: flex;
+      flex-direction: column; /* Stack items vertically */
+      align-items: center; /* Center align items horizontally */
 
       &.open {
-        max-height: 260px;
+        max-height: 300px; /* Increased to accommodate more items if needed */
       }
 
       ul {
-        flex-direction: column;
-        align-items: center;
-        height: 260px;
+        display: flex;
+        flex-direction: column; /* Ensure vertical alignment of menu items */
+        width: 100%; /* Full width for menu items */
+        padding: 0;
+        margin: 0;
 
         li {
-          margin: 14px 0;
+          margin: 10px 0; /* Space out items vertically */
+          width: 100%; /* Full width for clickable areas */
         }
 
         .bookButton {
-          width: 80%;
+          width: 150px;
+          height: 30px;
+          margin-bottom: 20px; /* Adjust as needed */
+          margin-left: 145px;
           text-align: center;
         }
       }
@@ -116,13 +140,12 @@
 
     .nav-toggle {
       display: flex;
-      margin-right: 50px;
+      margin-right: 50px; /* Adjust as needed */
     }
 
     .logo {
-      margin-right: 8rem;
-      font-size: 25px;
-      font-family: serif;
+      margin-right: 20px; /* Adjust based on header content */
+      font-size: 20px;
     }
   }
 
@@ -162,10 +185,11 @@
   @media (min-width: 768px) and (max-width: 991px) { /* Tablet */
     .nav {
       ul {
-        flex-direction: row;
+        flex-direction: row; /* Stack items horizontally */
+        align-items: center;
 
         li {
-          margin: 10px 20px;
+          margin: 10px 15px; /* Space out items */
         }
 
         .bookButton {
@@ -181,11 +205,11 @@
     }
 
     .logo {
-      margin-right: 30vw;
+      margin-right: 30vw; /* Adjust as needed */
     }
 
     .nav ul li {
-      margin: 0 15px;
+      margin: 0 15px; /* Adjust spacing */
     }
   }
 
@@ -195,29 +219,28 @@
     }
 
     .logo {
-      margin-right: 40vw;
+      margin-right: 40vw; /* Adjust as needed */
     }
-  
+
     .nav ul {
       display: flex;
-      justify-content: flex-end; /* Aligns the navigation to the right */
-      margin-right: 10px; /* Optional: Adds some spacing between nav items and edge */
+      justify-content: flex-end; /* Align the navigation to the right */
+      margin-right: 10px;
     }
-  
+
     .nav ul li {
-      margin: 0 15px; /* Adjusted to keep spacing consistent */
-      font-size: 16px; /* Ensure the font size is appropriate */
-      margin-left: 0px;
+      margin: 0 10px; /* Adjust spacing */
+      font-size: 16px;
     }
-  
+
     .bookButton {
       background: lightslategray;
       color: #fff;
       padding: 10px 20px;
       border-radius: 5px;
-      font-weight: bold; /* Make the button text stand out */
+      font-weight: bold;
       &:hover {
-        background: darkslategray; /* Slightly darker on hover */
+        background: darkslategray;
       }
     }
   }
