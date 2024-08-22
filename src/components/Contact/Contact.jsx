@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Contact.scss';
-import maps from '../Assets/maps.png';
+import maps from '../Assets/maps.jpeg';
 import Modal from '../Modal/Modal'; 
 
 const Contact = () => {

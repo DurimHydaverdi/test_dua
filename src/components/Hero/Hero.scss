@@ -29,10 +29,12 @@
 
     h1 {
       font-size: 3em;
+      font-family: Georgia;  
     }
 
     p {
       font-size: 1.5em;
+      font-family: Georgia;
     }
   }
 
@@ -54,14 +56,15 @@
     }
   }
 
-  @media (max-width: 425px) { /* Mobile-Specific Styles */
+  @media (max-width: 431px) { /* Mobile-Specific Styles */
     height: 350px;
 
     .background {
-      height: 80vw;
+      height: 60vw;
     }
 
     .heroText {
+      margin-top: -20px;
       h1 {
         font-size: 2em;
       }

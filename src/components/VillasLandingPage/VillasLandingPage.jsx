@@ -3,7 +3,7 @@ import './VillasLandingPage.scss';
 import background from '../Assets/backgroundVillas.jpg';
 import outside from '../Assets/outside.jpg';
 import p1 from '../Assets/p1.jpg';
-import collage from '../Assets/collage.png';
+import collage from '../Assets/collage.jpeg';
 import { Link } from 'react-router-dom';
 
 const VillasLandingPage = () => {

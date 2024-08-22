@@ -9,7 +9,9 @@ const Header = () => {
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+    document.body.classList.toggle('menu-open', !isOpen); // Optional: Add a class to the body
   };
+  
 
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
@@ -30,7 +32,7 @@ const Header = () => {
   return (
     <header className="header">
       <Link to='/'><img className='logo_img' src={logo} alt='dua-village-logo' /></Link>
-      <div className="logo">Dua Village</div>
+      {/* <div className="logo">Dua Village</div> */}
       <div className={`nav-toggle ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
         <div className="bar"></div>
         <div className="bar"></div>
