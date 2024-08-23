@@ -80,7 +80,7 @@ const VillaDetail = () => {
               </div>
             </div>
             <div className="villas-info">
-              <img src={p1} alt="Villas" className="villas-photo" />
+              {/* <img src={p1} alt="Villas" className="villas-photo" /> */}
               <div className="villas-details">
                 <button onClick={handleContact} className="contact">Contact</button>
               </div>

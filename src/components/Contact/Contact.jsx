@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import './Contact.scss';
 import maps from '../Assets/maps.jpeg';
-import Modal from '../Modal/Modal'; 
+import Modal from '../Modal/Modal';
+import { BsFillTelephoneFill } from "react-icons/bs";
+import { MdEmail } from "react-icons/md";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -90,6 +92,10 @@ const Contact = () => {
             onChange={handleChange}
             required
           ></textarea>
+          {/* <div className="contactDetails">
+            <p><BsFillTelephoneFill className='icons-nr' /><a href="tel:+38349100019">+38349100019</a></p>
+            <p><MdEmail className='icons-email' /><a href="mailto:duavillage1@gmail.com">duavillage1@gmail.com</a></p>
+          </div> */}
           <button type="submit">Send Message</button>
         </form>
       </div>
