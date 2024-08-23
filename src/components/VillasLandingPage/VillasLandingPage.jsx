@@ -24,7 +24,7 @@ const VillasLandingPage = () => {
           <h2>Kitchen</h2>
           <Link to="/villas">
             <button className='view-more' onClick={handleScrollToTop}>
-              View More
+              Explore More
             </button>
           </Link>
         </ul>

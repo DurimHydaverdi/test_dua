@@ -46,6 +46,56 @@
     }
   }
 
+  @media (max-width: 1281px) { /* Tablet */
+    .content {
+      flex-direction: column;
+      align-items: center;
+
+      .text-container {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+
+      .video-container {
+        margin-bottom: 20px;
+      }
+
+      h6 {
+        margin-bottom: 40px;
+        text-align: center;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+
+  @media (max-width: 1025px) { /* Tablet */
+    .content {
+      flex-direction: column;
+      align-items: center;
+
+      .text-container {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+
+      .video-container {
+        margin-bottom: 20px;
+      }
+
+      h6 {
+        margin-bottom: 40px;
+        text-align: center;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+
   @media (max-width: 991px) { /* Tablet */
     .content {
       flex-direction: column;
@@ -62,6 +112,7 @@
 
       h6 {
         margin-bottom: 40px;
+        text-align: center;
       }
 
       p {
@@ -109,9 +160,81 @@
     }
   }
 
-  @media (max-width: 425px) { /* Mobile-Specific Styles */
-    padding: 20px;
+  @media (max-width: 431px) { /* Mobile-Specific Styles */
+    padding: 0px;
     margin-top: 20px;
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .content {
+      .text-container {
+        margin-bottom: 15px;
+      }
+
+      .video-container {
+        margin-bottom: 15px;
+      }
+
+      h6 {
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 12px;
+      }
+
+      video {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  @media (max-width: 415px) { /* Mobile-Specific Styles */
+    padding: 0px;
+    margin-top: 20px;
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .content {
+      .text-container {
+        margin-bottom: 15px;
+      }
+
+      .video-container {
+        margin-bottom: 15px;
+      }
+
+      h6 {
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 12px;
+      }
+
+      video {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  @media (max-width: 375px) { /* Mobile-Specific Styles */
+    padding: 0px;
+    margin-top: 40px;
+
+    .about {
+      padding: 1rem;
+    }
 
     h2 {
       font-size: 24px;
