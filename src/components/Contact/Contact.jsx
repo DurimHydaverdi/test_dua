@@ -2,13 +2,17 @@ import React, { useState } from 'react';
 import './Contact.scss';
 import maps from '../Assets/maps.jpeg';
 import Modal from '../Modal/Modal';
-import { BsFillTelephoneFill } from "react-icons/bs";
-import { MdEmail } from "react-icons/md";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
+    message: '',
+  });
+
+  const [formErrors, setFormErrors] = useState({
+    name: '',
     phone: '',
     message: '',
   });
@@ -21,8 +25,46 @@ const Contact = () => {
     setFormData({ ...formData, [name]: value });
   };
 
+  const validateForm = () => {
+    const { name, phone, message } = formData;
+    let errors = {
+      name: '',
+      phone: '',
+      message: '',
+    };
+
+    // Function to count letters, ignoring non-letter characters
+    const countLetters = (str) => {
+      return (str.match(/[a-zA-Z]/g) || []).length;
+    };
+
+    // Full name validation (must have at least 3 letters)
+    if (countLetters(name) < 3) {
+      errors.name = 'Full Name should contain 3 or more letters.';
+    }
+
+    // Phone number validation (must contain only numbers, +, *, -)
+    if (!/^[\d+\-*]+$/.test(phone)) {
+      errors.phone = 'Phone number should only contain numbers, +, *, and -.';
+    }
+
+    // Message validation (must have at least 5 letters)
+    if (countLetters(message) < 5) {
+      errors.message = 'Message should contain 5 or more letters.';
+    }
+
+    setFormErrors(errors);
+
+    // Return false if there are any errors
+    return !Object.values(errors).some(error => error);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (!validateForm()) {
+      return;
+    }
 
     fetch('http://localhost:5000/send-email', {
       method: 'POST',
@@ -37,6 +79,7 @@ const Contact = () => {
         setModalContent('Message sent successfully!');
         setIsModalOpen(true);
         setFormData({ name: '', email: '', phone: '', message: '' });
+        setFormErrors({ name: '', phone: '', message: '' }); // Clear errors
       } else {
         setModalContent('Unexpected response format.');
         setIsModalOpen(true);
@@ -69,6 +112,8 @@ const Contact = () => {
             onChange={handleChange}
             required
           />
+          {formErrors.name && <p className="error-message">{formErrors.name}</p>}
+          
           <input
             type="email"
             name="email"
@@ -77,6 +122,7 @@ const Contact = () => {
             onChange={handleChange}
             required
           />
+          
           <input
             type="text"
             name="phone"
@@ -85,6 +131,8 @@ const Contact = () => {
             onChange={handleChange}
             required
           />
+          {formErrors.phone && <p className="error-message">{formErrors.phone}</p>}
+          
           <textarea
             name="message"
             placeholder="Message"
@@ -92,10 +140,8 @@ const Contact = () => {
             onChange={handleChange}
             required
           ></textarea>
-          {/* <div className="contactDetails">
-            <p><BsFillTelephoneFill className='icons-nr' /><a href="tel:+38349100019">+38349100019</a></p>
-            <p><MdEmail className='icons-email' /><a href="mailto:duavillage1@gmail.com">duavillage1@gmail.com</a></p>
-          </div> */}
+          {formErrors.message && <p className="error-message">{formErrors.message}</p>}
+          
           <button type="submit">Send Message</button>
         </form>
       </div>
